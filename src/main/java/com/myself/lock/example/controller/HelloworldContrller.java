@@ -24,8 +24,8 @@ public class HelloworldContrller {
     }
 
     @GetMapping(value = "/sayHello")
-    @Lock
-    public String sayHello(String message, @Param String name) {
+    @Lock(value = "#name")
+    public String sayHello(String message, String name) {
         return helloworldService.sayHello(message);
     }
 }
